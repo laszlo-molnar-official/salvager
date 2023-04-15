@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7940228013032030024}
+  - component: {fileID: 768076081845048340}
   - component: {fileID: 7940228013032030025}
   m_Layer: 0
   m_Name: PlayerShip
@@ -55,7 +56,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7940228013032030030}
-  m_LocalRotation: {x: -0, y: -0.8698884, z: -0, w: 0.4932485}
+  m_LocalRotation: {x: 0, y: -0.86988693, z: 0, w: 0.4932512}
   m_LocalPosition: {x: 110.42, y: 2.3211255, z: 92.82}
   m_LocalScale: {x: 0.34, y: 0.34, z: 0.34}
   m_ConstrainProportionsScale: 1
@@ -69,6 +70,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -120.891, z: 0}
+--- !u!114 &768076081845048340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 405a4c4e43fd4e240bf8e2aeaf47a433, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7940228013032030025}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.InputHandling.ShipController,
+          Salvager
+        m_MethodName: OnDirections
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0b5d101f-0f88-48ca-9010-1cccea5c85d4
+    m_ActionName: Player1ShipControls/Directions[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6a3ac2b8-b32e-4d0f-9b63-39ab0890edc8
+    m_ActionName: Player1ShipControls/MouseLook[/Mouse/delta]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: MouseAndKeyboard
+  m_DefaultActionMap: Player1ShipControls
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &7940228013032030025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +133,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc73ff770411c545a04457c4afb469f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+  speedMultiplier: 5
+  rotationMultiplier: 50
+  maxRotationPower: 1.1
+  maxThrottlePower: 2
 --- !u!1 &7940228013530545882
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,11 +410,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   water: {fileID: 0}
-  applyRipple: 1
+  shipController: {fileID: 7940228013032030025}
+  applyRipple: 0
   frontBuoy: {fileID: 7940228014470209306}
   backBuoy: {fileID: 7940228012945703608}
   leftBuoy: {fileID: 7940228013741088758}
   rightBuoy: {fileID: 7940228013831654150}
+  minBuoyancy: 0
+  speedLeanMultiplier: 8
+  shipBodyInertia: 2
 --- !u!4 &41066950351513953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7971579574400619277, guid: 65b4ba211f342f742a439cf16f1677a8, type: 3}

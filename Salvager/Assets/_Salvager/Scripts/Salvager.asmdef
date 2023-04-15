@@ -2,7 +2,8 @@
     "name": "Salvager",
     "rootNamespace": "",
     "references": [
-        "GUID:963cd5ce1ae3b3d4494f1950fd5ca152"
+        "GUID:963cd5ce1ae3b3d4494f1950fd5ca152",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,4 +1,5 @@
-﻿using Pinwheel.Poseidon;
+﻿using Assets._Salvager.Scripts.InputHandling;
+using Pinwheel.Poseidon;
 using UnityEngine;
 
 namespace Assets._Salvager.Scripts.Water
@@ -7,6 +8,8 @@ namespace Assets._Salvager.Scripts.Water
     {
         [SerializeField]
         private PWater water;
+        [SerializeField]
+        private ShipController shipController;
         [SerializeField]
         private bool applyRipple;
         [SerializeField]
@@ -17,21 +20,50 @@ namespace Assets._Salvager.Scripts.Water
         private Transform leftBuoy;
         [SerializeField]
         private Transform rightBuoy;
+        [SerializeField, Tooltip("Buoyancy power decreases as throttle and " +
+        "rotation power increases. This is the minimum percentage that'll stay active when " +
+        "throttle and rotation is on 100%. 0 .. 1 where 1 is 100%"),
+        Range(0, 1)]
+        private float minBuoyancy;
+        [SerializeField, Tooltip("The ship leans when turning"),
+        Range(0, 20)]
+        private float speedLeanMultiplier;
+        [SerializeField, Tooltip("How quickly the rotating of the ship body will happen"),
+        Range(0, 20)]
+        private float shipBodyInertia = 2;
+        
 
-        void Update()
+        private void Update()
         {
             if (water != null)
             { 
-                var xAngle = AngleBetweenBuoys(backBuoy.position, frontBuoy.position);
-                var zAngle = AngleBetweenBuoys(rightBuoy.position, leftBuoy.position);
+                var speedMod = GetSpeedMod();
+                var xAngle = speedMod * AngleBetweenBuoys(backBuoy.position, frontBuoy.position);
+                var zAngle = speedMod * AngleBetweenBuoys(rightBuoy.position, leftBuoy.position);
 
-                transform.localRotation = Quaternion.Euler(
-                    xAngle,
-                    transform.localRotation.eulerAngles.y,
-                    zAngle);
+                // modify Z-axis leaning with the leaning because of the ship is turning
+                zAngle -= speedLeanMultiplier * shipController.CurrentRotationPower();
+
+                transform.localRotation = Quaternion.RotateTowards(transform.localRotation, 
+                                            Quaternion.Euler(
+                                                xAngle,
+                                                transform.localRotation.eulerAngles.y,
+                                                zAngle),
+                                                shipBodyInertia * Time.deltaTime);
             }
         }
 
+        // calculate the angle of angular offsets accounting the ship throttle and
+        // rotational power
+        private float GetSpeedMod()
+        { 
+            float xSpeedMod = Mathf.Abs(shipController.CurrentThrottlePower());
+            float zSpeedMod = Mathf.Abs(shipController.CurrentRotationPower());
+            float speedMod = 1 - (xSpeedMod > zSpeedMod ? xSpeedMod : zSpeedMod);
+            
+            return speedMod < minBuoyancy ? minBuoyancy : speedMod;
+        }
+        
         private float AngleBetweenBuoys(Vector3 buoy1, Vector3 buoy2)
         { 
             var direction = BuoyPosition(buoy1) - BuoyPosition(buoy2);
