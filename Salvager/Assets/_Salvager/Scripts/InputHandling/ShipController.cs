@@ -1,3 +1,4 @@
+using Assets.Scripts.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,8 @@ namespace Assets._Salvager.Scripts.InputHandling
 { 
     public class ShipController : MonoBehaviour
     {
+        [SerializeField]
+        private GameEvent_NoParam setLevelStarted;
         [SerializeField]
         private float speedMultiplier = 1;
         [SerializeField]
@@ -18,6 +21,7 @@ namespace Assets._Salvager.Scripts.InputHandling
         private float rotationPower;
         private float rotationModifier;
         private float throttleModifier;
+        private bool levelStartSent;
 
         // Between -1 .. 1 where 1 means 100%, the sign means the direction
         public float CurrentRotationPower() => rotationPower / maxRotationPower;
@@ -66,6 +70,12 @@ namespace Assets._Salvager.Scripts.InputHandling
                 Vector2 direction = context.ReadValue<Vector2>();
                 rotationModifier = direction.x;
                 throttleModifier = direction.y;
+
+                if (!levelStartSent)
+                {
+                    levelStartSent = true;
+                    setLevelStarted.Raise(this.gameObject);
+                }
             }
             else
             {

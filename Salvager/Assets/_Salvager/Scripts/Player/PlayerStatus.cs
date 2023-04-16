@@ -10,21 +10,38 @@ namespace Assets._Salvager.Scripts.Player
         [SerializeField]
         private GameEvent_NoParam getLevelTargetNumber;
         [SerializeField]
+        private GameEvent_NoParam getLevelSummaryRef;
+        [SerializeField]
         private GameEvent_Int sendTargetsReachedNumber;
+        [SerializeField]
+        private GameEvent_NoParam sendTargetsCollected;
         [SerializeField]
         private string levelTargetTag = "LevelTarget";
 
         private List<LevelTargetCone> targetsReached = new();
-        [SerializeField]
         private int targetNumber = -1;
+        private LevelSummary summaryRef;
+        private bool levelStarted;
 
         public void SetLevelTargetNumber(int targetNum) => targetNumber = targetNum;
+        public void StartLevel() => levelStarted = true;
+        public void SetLevelSummary(LevelSummary summary) => summaryRef = summary;
         public void SendReachedTargetsNumber() => sendTargetsReachedNumber.
                                                     Raise(this.gameObject, targetsReached.Count);
 
         private void Start()
         {
             if (targetNumber == -1) getLevelTargetNumber.Raise(this.gameObject);
+            if (summaryRef == null) getLevelSummaryRef.Raise(this.gameObject);
+        }
+
+        private void FixedUpdate()
+        {
+            if (levelStarted &&
+                summaryRef != null)
+            {
+                summaryRef.UpdateStats(Time.fixedDeltaTime);
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -46,6 +63,11 @@ namespace Assets._Salvager.Scripts.Player
                 targetsReached.Add(target);
                 target.SetCompleted();
                 sendTargetsReachedNumber.Raise(this.gameObject, targetsReached.Count);
+
+                if (targetsReached.Count == targetNumber)
+                {
+                    sendTargetsCollected.Raise(this.gameObject);
+                }
             }
         }
     }

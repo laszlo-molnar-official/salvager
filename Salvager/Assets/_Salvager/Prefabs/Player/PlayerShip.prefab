@@ -173,7 +173,7 @@ MonoBehaviour:
   getLevelTargetNumber: {fileID: 11400000, guid: 95835e390f66ea34f90c47d2901e79b0, type: 2}
   getLevelSummaryRef: {fileID: 11400000, guid: 421fc81deeeab2e49bec55e674e87211, type: 2}
   sendTargetsReachedNumber: {fileID: 11400000, guid: e7afe337524b8db40a58f48eb3b541ba, type: 2}
-  sendLevelFinished: {fileID: 11400000, guid: c7df0f68030f4514d92327f0960c485b, type: 2}
+  sendTargetsCollected: {fileID: 11400000, guid: 8c02ac2a20a80814284f4af447a50a84, type: 2}
   levelTargetTag: LevelTarget
 --- !u!114 &3287188835109893722
 MonoBehaviour:
