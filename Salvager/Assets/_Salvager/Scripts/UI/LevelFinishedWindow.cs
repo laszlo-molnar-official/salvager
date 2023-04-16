@@ -12,11 +12,24 @@ namespace Assets._Salvager.Scripts.UI
         private TMP_Text moneyEarned;
         [SerializeField]
         private TMP_Text time;
+        [SerializeField]
+        private GameObject window;
+
+        private bool levelFinished;
+
+        public void SetLevelFinished() => levelFinished = true;
 
         public void Show(LevelSummary summary)
         {
-            moneyEarned.text = summary.MoneyEarned.ToString();
-            time.text = TimeSpan.FromSeconds(summary.TimePassed).ToString(@"mm\:ss\:fff");
+            if (levelFinished)
+            { 
+                window.SetActive(true);
+                moneyEarned.text = summary.MoneyEarned.ToString() +
+                    " / " +
+                    summary.MaxMoney.ToString();
+
+                time.text = TimeSpan.FromSeconds(summary.TimePassed).ToString(@"mm\:ss\:fff");
+            }
         }
     }
 }

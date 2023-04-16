@@ -21,10 +21,11 @@ namespace Assets._Salvager.Scripts.Player
         private List<LevelTargetCone> targetsReached = new();
         private int targetNumber = -1;
         private LevelSummary summaryRef;
-        private bool levelStarted;
+        private bool levelOngoing;
 
         public void SetLevelTargetNumber(int targetNum) => targetNumber = targetNum;
-        public void StartLevel() => levelStarted = true;
+        public void StartLevel() => levelOngoing = true;
+        public void LevelFinished() => levelOngoing = false;
         public void SetLevelSummary(LevelSummary summary) => summaryRef = summary;
         public void SendReachedTargetsNumber() => sendTargetsReachedNumber.
                                                     Raise(this.gameObject, targetsReached.Count);
@@ -37,7 +38,7 @@ namespace Assets._Salvager.Scripts.Player
 
         private void FixedUpdate()
         {
-            if (levelStarted &&
+            if (levelOngoing &&
                 summaryRef != null)
             {
                 summaryRef.UpdateStats(Time.fixedDeltaTime);
