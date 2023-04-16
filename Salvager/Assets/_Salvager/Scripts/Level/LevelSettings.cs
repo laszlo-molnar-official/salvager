@@ -1,4 +1,5 @@
 ﻿using Assets._Salvager.Scripts.Player;
+using Assets.Scripts.Events;
 using Pinwheel.Poseidon;
 using UnityEngine;
 
@@ -8,6 +9,13 @@ namespace Assets._Salvager.Scripts.Level
     {
         [SerializeField]
         private LevelTarget[] targets;
+        [SerializeField]
+        private GameEvent_Int sendLevelTargetNumber;
+
+        public void SendLevelTargetNumber()
+        { 
+            sendLevelTargetNumber.Raise(this.gameObject, targets.Length);
+        }
 
 #if UNITY_EDITOR
         public void SetTargets(LevelTarget[] targets, PWater water)

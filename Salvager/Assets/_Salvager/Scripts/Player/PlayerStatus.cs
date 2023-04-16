@@ -1,4 +1,5 @@
 ﻿using Assets._Salvager.Scripts.Level;
+using Assets.Scripts.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +8,20 @@ namespace Assets._Salvager.Scripts.Player
     public class PlayerStatus : MonoBehaviour
     {
         [SerializeField]
+        private GameEvent_NoParam getLevelTargetNumber;
+        [SerializeField]
         private string levelTargetTag = "LevelTarget";
 
         private List<LevelTargetCone> targetsReached = new();
+        [SerializeField]
+        private int targetNumber = -1;
+
+        public void SetLevelTargetNumber(int targetNum) => targetNumber = targetNum;
+
+        private void Start()
+        {
+            if (targetNumber == -1) getLevelTargetNumber.Raise(this.gameObject);
+        }
 
         private void OnTriggerEnter(Collider other)
         {
