@@ -43,8 +43,11 @@ GameObject:
   - component: {fileID: 768076081845048340}
   - component: {fileID: 7940228013032030025}
   - component: {fileID: 2855023267053250507}
+  - component: {fileID: 3287188835109893722}
+  - component: {fileID: 5151217377807515131}
   - component: {fileID: 624123956379280780}
   - component: {fileID: 6796894782259384535}
+  - component: {fileID: 9134902711912073061}
   - component: {fileID: 1096922112}
   - component: {fileID: 1096922111}
   m_Layer: 0
@@ -118,7 +121,19 @@ MonoBehaviour:
     m_ActionId: 0b5d101f-0f88-48ca-9010-1cccea5c85d4
     m_ActionName: Player1ShipControls/Directions[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3287188835109893722}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.UI.MapToggler, Salvager
+        m_MethodName: ToggleMap
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6a3ac2b8-b32e-4d0f-9b63-39ab0890edc8
     m_ActionName: Player1ShipControls/MouseLook[/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 0
@@ -138,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fc73ff770411c545a04457c4afb469f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setLevelStarted: {fileID: 11400000, guid: a347c0de40e1a1e488740b6aa8e98364, type: 2}
   speedMultiplier: 5
   rotationMultiplier: 50
   maxRotationPower: 1.1
@@ -155,9 +171,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getLevelTargetNumber: {fileID: 11400000, guid: 95835e390f66ea34f90c47d2901e79b0, type: 2}
+  getLevelSummaryRef: {fileID: 11400000, guid: 421fc81deeeab2e49bec55e674e87211, type: 2}
   sendTargetsReachedNumber: {fileID: 11400000, guid: e7afe337524b8db40a58f48eb3b541ba, type: 2}
+  sendLevelFinished: {fileID: 11400000, guid: c7df0f68030f4514d92327f0960c485b, type: 2}
   levelTargetTag: LevelTarget
-  targetNumber: 0
+--- !u!114 &3287188835109893722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d940a30439516fa46b5b91fb8e2194af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggleMap: {fileID: 11400000, guid: 778c26cee2e013d4b8f6900142090de8, type: 2}
+--- !u!114 &5151217377807515131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538abb5e905f844297106b16eb3ea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a347c0de40e1a1e488740b6aa8e98364, type: 2}
+  ResponseDelay: 0
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2855023267053250507}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.Player.PlayerStatus, Salvager
+        m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &624123956379280780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +265,34 @@ MonoBehaviour:
       - m_Target: {fileID: 2855023267053250507}
         m_TargetAssemblyTypeName: Assets._Salvager.Scripts.Player.PlayerStatus, Salvager
         m_MethodName: SetLevelTargetNumber
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &9134902711912073061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c926c284ee1a904390ae4322a66b3c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 24842d4ce32689547a739081d057ed45, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2855023267053250507}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.Player.PlayerStatus, Salvager
+        m_MethodName: SetLevelSummary
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

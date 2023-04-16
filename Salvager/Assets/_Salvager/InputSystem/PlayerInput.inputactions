@@ -15,10 +15,10 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "MouseLook",
-                    "type": "Value",
+                    "name": "OpenMap",
+                    "type": "Button",
                     "id": "6a3ac2b8-b32e-4d0f-9b63-39ab0890edc8",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -83,11 +83,11 @@
                 {
                     "name": "",
                     "id": "01721d7a-1375-46ad-87b3-7de50128c1fc",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "MouseAndKeyboard",
-                    "action": "MouseLook",
+                    "action": "OpenMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
