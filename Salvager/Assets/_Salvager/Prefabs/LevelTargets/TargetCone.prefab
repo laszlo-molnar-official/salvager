@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 496000021063177526}
   - component: {fileID: 2102065534557163619}
   - component: {fileID: 7890889356782797290}
+  - component: {fileID: 6155508057936979667}
   m_Layer: 0
   m_Name: TargetCone
-  m_TagString: Untagged
+  m_TagString: LevelTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -215,3 +216,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.07691683
   m_Center: {x: -0.000000002428139, y: 0.0000000037931227, z: 0}
+--- !u!114 &6155508057936979667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248308160307886489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d513bf68d2fc4408bf64373fe42f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTarget: {fileID: 0}

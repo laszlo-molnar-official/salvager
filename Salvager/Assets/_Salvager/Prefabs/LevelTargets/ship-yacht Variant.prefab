@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
+  targetCone: {fileID: 3664534013150818554}
 --- !u!4 &2344983399336130828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3868556280323394906, guid: 0adcd60a1c813e24ba2cde191ac499d0, type: 3}
@@ -160,9 +161,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 165
       objectReference: {fileID: 0}
+    - target: {fileID: 6155508057936979667, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+      propertyPath: levelTarget
+      value: 
+      objectReference: {fileID: 6787284508898012141}
     - target: {fileID: 8248308160307886489, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
       propertyPath: m_Name
       value: TargetCone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+--- !u!1 &3664534013150818554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8248308160307886489, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+  m_PrefabInstance: {fileID: 4660357923496233315}
+  m_PrefabAsset: {fileID: 0}

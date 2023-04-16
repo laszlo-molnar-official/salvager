@@ -180,7 +180,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1095153250331001321, guid: 6c1f4ec387950774d96733a77932a08a, type: 3}
       propertyPath: m_Name
-      value: ship-cargo
+      value: ship-cargo Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1095153250331001321, guid: 6c1f4ec387950774d96733a77932a08a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
+  targetCone: {fileID: 1492351946008432317}
 --- !u!1001 &7404488030752962340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -390,9 +391,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 165
       objectReference: {fileID: 0}
+    - target: {fileID: 6155508057936979667, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+      propertyPath: levelTarget
+      value: 
+      objectReference: {fileID: 2861182165800145823}
     - target: {fileID: 8248308160307886489, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
       propertyPath: m_Name
       value: TargetCone
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+--- !u!1 &1492351946008432317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8248308160307886489, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+  m_PrefabInstance: {fileID: 7404488030752962340}
+  m_PrefabAsset: {fileID: 0}
