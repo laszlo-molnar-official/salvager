@@ -42,6 +42,9 @@ GameObject:
   - component: {fileID: 7940228013032030024}
   - component: {fileID: 768076081845048340}
   - component: {fileID: 7940228013032030025}
+  - component: {fileID: 2855023267053250507}
+  - component: {fileID: 1096922112}
+  - component: {fileID: 1096922111}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -137,6 +140,48 @@ MonoBehaviour:
   rotationMultiplier: 50
   maxRotationPower: 1.1
   maxThrottlePower: 2
+--- !u!114 &2855023267053250507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 200912c8aae22274483df0355b723f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &1096922112
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!136 &1096922111
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.66
+  m_Height: 22.71
+  m_Direction: 2
+  m_Center: {x: 0, y: 1.31, z: 0.47}
 --- !u!1 &7940228013530545882
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,14 +207,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7940228013530545882}
-  m_LocalRotation: {x: 0.21168941, y: 0.00642404, z: -0.0014244094, w: 0.9773149}
-  m_LocalPosition: {x: 0.5299954, y: 14.250001, z: -20.810007}
+  m_LocalRotation: {x: 0.16315006, y: 0.006480097, z: -0.0011050333, w: 0.98657936}
+  m_LocalPosition: {x: 0.5299954, y: 12.8, z: -20.810007}
   m_LocalScale: {x: 2.9411764, y: 2.9411764, z: 2.941176}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7940228013032030024}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 24.443, y: 0.752, z: -0.004}
+  m_LocalEulerAnglesHint: {x: 18.78, y: 0.752, z: -0.004}
 --- !u!20 &7940228013530545444
 Camera:
   m_ObjectHideFlags: 0
@@ -195,7 +240,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -329,6 +374,22 @@ PrefabInstance:
       propertyPath: Buoy2
       value: 
       objectReference: {fileID: 7940228012945703608}
+    - target: {fileID: 6615177933462696870, guid: 65b4ba211f342f742a439cf16f1677a8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300002, guid: 5f305c0611af59342a39bc0b3c8129c1, type: 3}
+    - target: {fileID: 6615177933462696870, guid: 65b4ba211f342f742a439cf16f1677a8, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6615177933462696870, guid: 65b4ba211f342f742a439cf16f1677a8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971579574398849517, guid: 65b4ba211f342f742a439cf16f1677a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b8f09562f819a24f82082d73c1f801e, type: 2}
     - target: {fileID: 7971579574400619277, guid: 65b4ba211f342f742a439cf16f1677a8, type: 3}
       propertyPath: m_RootOrder
       value: 5
