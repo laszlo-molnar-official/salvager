@@ -10,6 +10,8 @@ namespace Assets._Salvager.Scripts.Player
         [SerializeField]
         private GameEvent_NoParam getLevelTargetNumber;
         [SerializeField]
+        private GameEvent_Int sendTargetsReachedNumber;
+        [SerializeField]
         private string levelTargetTag = "LevelTarget";
 
         private List<LevelTargetCone> targetsReached = new();
@@ -17,6 +19,8 @@ namespace Assets._Salvager.Scripts.Player
         private int targetNumber = -1;
 
         public void SetLevelTargetNumber(int targetNum) => targetNumber = targetNum;
+        public void SendReachedTargetsNumber() => sendTargetsReachedNumber.
+                                                    Raise(this.gameObject, targetsReached.Count);
 
         private void Start()
         {
@@ -41,6 +45,7 @@ namespace Assets._Salvager.Scripts.Player
             { 
                 targetsReached.Add(target);
                 target.SetCompleted();
+                sendTargetsReachedNumber.Raise(this.gameObject, targetsReached.Count);
             }
         }
     }

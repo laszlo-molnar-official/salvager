@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 768076081845048340}
   - component: {fileID: 7940228013032030025}
   - component: {fileID: 2855023267053250507}
+  - component: {fileID: 624123956379280780}
   - component: {fileID: 6796894782259384535}
   - component: {fileID: 1096922112}
   - component: {fileID: 1096922111}
@@ -154,8 +155,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getLevelTargetNumber: {fileID: 11400000, guid: 95835e390f66ea34f90c47d2901e79b0, type: 2}
+  sendTargetsReachedNumber: {fileID: 11400000, guid: e7afe337524b8db40a58f48eb3b541ba, type: 2}
   levelTargetTag: LevelTarget
   targetNumber: 0
+--- !u!114 &624123956379280780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538abb5e905f844297106b16eb3ea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6419a32b13a3fbd4a9c521c3e357285a, type: 2}
+  ResponseDelay: 0
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2855023267053250507}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.Player.PlayerStatus, Salvager
+        m_MethodName: SendReachedTargetsNumber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6796894782259384535
 MonoBehaviour:
   m_ObjectHideFlags: 0
