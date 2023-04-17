@@ -137,9 +137,13 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6a3ac2b8-b32e-4d0f-9b63-39ab0890edc8
     m_ActionName: Player1ShipControls/MouseLook[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca9833fb-a727-4c33-9ff3-25a10de1fd83
+    m_ActionName: Dummy/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: MouseAndKeyboard
-  m_DefaultActionMap: Player1ShipControls
+  m_DefaultActionMap: Dummy
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &7940228013032030025
