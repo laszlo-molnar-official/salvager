@@ -18,6 +18,11 @@ namespace Assets._Salvager.Scripts.Level
         [HideInInspector]
         public float TimePassed;
 
+        public void Init()
+        {
+            MoneyEarned = MaxMoney;
+        }
+
         public void UpdateStats(float deltaTime)
         { 
             TimePassed += deltaTime;

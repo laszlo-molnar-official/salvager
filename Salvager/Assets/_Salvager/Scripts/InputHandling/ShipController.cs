@@ -22,15 +22,36 @@ namespace Assets._Salvager.Scripts.InputHandling
         private float rotationModifier;
         private float throttleModifier;
         private bool levelStartSent;
+        private Rigidbody rb;
 
         // Between -1 .. 1 where 1 means 100%, the sign means the direction
         public float CurrentRotationPower() => rotationPower / maxRotationPower;
         public float CurrentThrottlePower() => throttlePower / maxThrottlePower;
 
+        private void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+        }
+
         private void Update()
         {
             HandleThrottleInput();
             HandleTurnInput();
+
+            // quick hacks to relieve Rigidbody velocity caused by collision with objects.
+            if (rb.velocity.x != 0 || 
+                rb.velocity.y != 0 || 
+                rb.velocity.z != 0) 
+            {
+                rb.velocity *= 0.8f;
+            }
+
+            if (rb.angularVelocity.x != 0 || 
+                rb.angularVelocity.y != 0 || 
+                rb.angularVelocity.z != 0) 
+            {
+                rb.angularVelocity *= 0.8f;
+            }
         }
 
         private void HandleThrottleInput()
