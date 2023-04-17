@@ -37,12 +37,17 @@ namespace Assets._Salvager.Scripts.Water
         {
             if (water != null)
             { 
-                var speedMod = GetSpeedMod();
+                float speedMod = 1;
+                if (shipController != null) speedMod = GetSpeedMod();
+
                 var xAngle = speedMod * AngleBetweenBuoys(backBuoy.position, frontBuoy.position);
                 var zAngle = speedMod * AngleBetweenBuoys(rightBuoy.position, leftBuoy.position);
 
                 // modify Z-axis leaning with the leaning because of the ship is turning
-                zAngle -= speedLeanMultiplier * shipController.CurrentRotationPower();
+                if (shipController != null)
+                { 
+                    zAngle -= speedLeanMultiplier * shipController.CurrentRotationPower();
+                }
 
                 transform.localRotation = Quaternion.RotateTowards(transform.localRotation, 
                                             Quaternion.Euler(

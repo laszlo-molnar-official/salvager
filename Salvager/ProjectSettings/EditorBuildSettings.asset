@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Salvager/Scenes/Start.unity
+    path: Assets/_Salvager/Scenes/start.unity
     guid: 76d72cc0694e355458fe6d3b68b83db6
+  - enabled: 1
+    path: Assets/_Salvager/Scenes/mainmenu.unity
+    guid: 643b375e7222f5f4aa00f71016a35aab
   - enabled: 1
     path: Assets/_Salvager/Scenes/level01.unity
     guid: a39f0ce080dd9be4e9d59eca74c8aaa4
