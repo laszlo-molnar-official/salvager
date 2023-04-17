@@ -25,6 +25,8 @@ namespace Assets._Salvager.Scripts.Player
 
         public void SetLevelTargetNumber(int targetNum) => targetNumber = targetNum;
         public void StartLevel() => levelOngoing = true;
+        public void PauseGame() => levelOngoing = false;
+        public void ResumeGame() => levelOngoing = true;
         public void LevelFinished() => levelOngoing = false;
         public void SendReachedTargetsNumber() => sendTargetsReachedNumber.
                                                     Raise(this.gameObject, targetsReached.Count);

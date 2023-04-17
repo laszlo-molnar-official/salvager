@@ -49,6 +49,9 @@ GameObject:
   - component: {fileID: 6796894782259384535}
   - component: {fileID: 9134902711912073061}
   - component: {fileID: 7152426624610219009}
+  - component: {fileID: 7553076141321082369}
+  - component: {fileID: 2315070663575727620}
+  - component: {fileID: 778649125285376023}
   - component: {fileID: 1096922112}
   - component: {fileID: 1096922111}
   m_Layer: 0
@@ -141,6 +144,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ca9833fb-a727-4c33-9ff3-25a10de1fd83
     m_ActionName: Dummy/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 778649125285376023}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.UI.OpenMenu, Salvager
+        m_MethodName: Open
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9563f48d-6a25-4aff-ad01-184c8562c07e
+    m_ActionName: Player1ShipControls/IngameMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: MouseAndKeyboard
   m_DefaultActionMap: Player1ShipControls
@@ -336,6 +355,77 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7553076141321082369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538abb5e905f844297106b16eb3ea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 44309dade45358a48b9a234ee35df5ef, type: 2}
+  ResponseDelay: 0
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2855023267053250507}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.Player.PlayerStatus, Salvager
+        m_MethodName: PauseGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2315070663575727620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538abb5e905f844297106b16eb3ea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 957a5560be18d1f4bb77a2e0ae33faeb, type: 2}
+  ResponseDelay: 0
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2855023267053250507}
+        m_TargetAssemblyTypeName: Assets._Salvager.Scripts.Player.PlayerStatus, Salvager
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &778649125285376023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7940228013032030030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fb4fa2081cd434db8436155617f7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventToRaise: {fileID: 11400000, guid: 12ba9b5107618df40b3c829d61e71d4b, type: 2}
 --- !u!54 &1096922112
 Rigidbody:
   m_ObjectHideFlags: 0
