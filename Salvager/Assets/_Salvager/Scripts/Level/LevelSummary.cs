@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets._Salvager.Scripts.Level
 {
@@ -10,9 +11,11 @@ namespace Assets._Salvager.Scripts.Level
     public class LevelSummary
     {
         public int MaxMoney;
-        public int MoneyEarned;
         public float TimeBeforeMoneyLessens;
         public float TimeWhenMoneyLessens;
+        [HideInInspector]
+        public int MoneyEarned;
+        [HideInInspector]
         public float TimePassed;
 
         public void UpdateStats(float deltaTime)

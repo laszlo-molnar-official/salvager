@@ -4,6 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Salvager/Scenes/Start.unity
+    guid: 76d72cc0694e355458fe6d3b68b83db6
+  - enabled: 1
+    path: Assets/_Salvager/Scenes/level01.unity
+    guid: a39f0ce080dd9be4e9d59eca74c8aaa4
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1e4e30b9247ea854cac0489dcf381682, type: 2}
