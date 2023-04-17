@@ -1,9 +1,5 @@
-﻿using Pinwheel.Poseidon;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#if UNITY_EDITOR
+using Pinwheel.Poseidon;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,3 +21,4 @@ namespace Assets._Salvager.Scripts.Level
         }
     }
 }
+#endif // UNITY_EDITOR
