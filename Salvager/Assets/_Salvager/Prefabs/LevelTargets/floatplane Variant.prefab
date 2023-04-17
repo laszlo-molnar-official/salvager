@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6155508057936979667, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
+      propertyPath: levelTarget
+      value: 
+      objectReference: {fileID: 2394721707775127810}
     - target: {fileID: 8248308160307886489, guid: 9225385b8b9342d4b9651fcb46b29027, type: 3}
       propertyPath: m_Name
       value: TargetCone
