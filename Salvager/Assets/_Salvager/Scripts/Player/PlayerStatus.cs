@@ -33,8 +33,11 @@ namespace Assets._Salvager.Scripts.Player
 
         public void SetLevelSummary(LevelSummary summary)
         {
-            summaryRef = summary;
-            summaryRef.Init();
+            if (summaryRef == null)
+            { 
+                summaryRef = summary;
+                summaryRef.Init();
+            }
         }
         
         private void Start()
